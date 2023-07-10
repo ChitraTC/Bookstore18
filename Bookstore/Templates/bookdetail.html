@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Book Detail{% endblock title %}
+{% block main-content %}
+<h1 ms-5 xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">{{book.title}}</h1>
+<div class="card mb-5 mt-3 ms-5 " style="max-width:850px;">
+    <div class="row no-gutters">
+        <div class="col-md-4 mt-4 mb-4 ms-4">
+            <img src="{{book.image_url}}" class="card-img">
+
+
+<!--                <h4 class="card-title">{{object.title}}</h4>-->
+                <p class="card-text fw-bold">Author : {{book.author}}</p>
+                <p class="card-text fw-bold">Price   : Rs{{book.price}}</p>
+        </div>
+        <div class="col-md-7">
+            <div class="card-body ">
+                <br>
+                <br>
+                <br>
+                <br>
+                <p class="card-text fw-bold ms-4">About this book:</p>
+                <br>
+                <p class="card-text ms-4">{{book.description}}</p>
+                <br>
+                <br>
+                <br>
+
+                <form action="/add_to_cart" class="d-inline">
+                    <input type="hidden" name="b_id" value={{book.id}} />
+
+                    <button type="submit" class="btn btn-success" href="{% url 'add_to_cart'%}">Add To Cart</button>
+                </form>
+                <a href="{% url 'checkout' book.id %}" class="btn btn-warning shadow px-5 py-2 ms-4">Buy Now</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<div>-->
+<!--    <img src="{{object.image_url}}" width="250px" height="350px">-->
+<!--    <div class="fw-bold">{{object.title}}</div>-->
+<!--    <div class="fw-light">{{object.author}}</div>-->
+<!--    <div class="fw-bold text-danger">{{object.price}} Rs/-</div>-->
+<!--    <div class="fw-bold text-danger">{{object.description}} Rs/-</div>-->
+<!--</div>-->
+{% endblock main-content %}

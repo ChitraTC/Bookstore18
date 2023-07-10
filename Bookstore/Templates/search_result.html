@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Result{% endblock title %}
+{% block main-content %}
+
+ <h3 class = "text-secondary">Search Results</h3><hr>
+<div class="col-sm-9">
+                <div class="row">
+    {% for b in allbook %}
+        <h3><a href="{% url 'bookdetail' b.pk %}">{{b.tite}}</a></h3>
+        <div class="card col-lg-4 col-md-4 col-6 mt-4 ms-4" style="max-width:300px;">
+                        <div class="col text-center mb-4 mt-4">
+                            <a href="{% url 'bookdetail' b.id %}" class="btn">
+                                <div>
+                                    <img src="{{b.image_url}}" width="250px" height="350px">
+                                    <div class="fw-bold">{{b.title}}</div>
+                                     <div class="fw-light">{{b.author}}</div>
+                                    <div class="fw-bold text-danger">{{b.price}} Rs/-</div>
+                                </div>
+                            </a>
+                        </div></div>
+
+    {% empty %}
+    <h5 class="text-danger">Nothing Found!!</h5>
+    {% endfor %}
+
+<!--<div class="col-sm-9">-->
+<!--                <div class="row">-->
+<!--                    {% for b in book %}-->
+
+<!--                        <div class="card col-lg-4 col-md-4 col-6 mt-4 ms-4" style="max-width:300px;">-->
+<!--                        <div class="col text-center mb-4">-->
+<!--                            <a href="{% url 'bookdetail' b.id %}" class="btn">-->
+<!--                                <div>-->
+<!--                                    <img src="{{b.image_url}}" width="250px" height="350px">-->
+<!--                                    <div class="fw-bold">{{b.title}}</div>-->
+<!--                                     <div class="fw-light">{{b.author}}</div>-->
+<!--                                    <div class="fw-bold text-danger">{{b.price}} Rs/-</div>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </div></div>-->
+<!--                    {% endfor %}-->
+                </div>
+            </div>
+
+
+{% endblock main-content%}

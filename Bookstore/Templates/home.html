@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'boots/images/banner/img_2.png' %}" class="d-block w-100" alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'boots/images/banner/img_1.png' %}" class="d-block w-100" alt="">
+    </div>
+
+      <div class="carousel-item">
+      <img src="{% static 'boots/images/banner/img_3.png' %}" class="d-block w-100" alt="">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+{% endblock content %}
+
+<!--{% block info %}-->
+<!--<div class="container">-->
+<!--    <div class="row bg-warning text-center p-5 width:100% text-black border-bottom shadow">-->
+<!--    <h1>Books</h1>-->
+<!--    <small class="fs-5">What elements make a good book? We all have our own take. Some readers like action, some prefer romance—a little of both.-->
+<!--        The one thing all readers share is their strong opinions.</small>-->
+<!--    </div>-->
+<!--</div>-->
+<!--{% endblock info %}-->
+
+{% block main-content %}
+<h2>Welcome to the world of books .....B4U!!!</h2>
+<p>We all have our own take. Some readers like action, some prefer romance—a little of both</p>
+{% endblock main-content %}
